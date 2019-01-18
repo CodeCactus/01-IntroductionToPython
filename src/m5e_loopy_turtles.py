@@ -52,6 +52,7 @@ window = rg.TurtleWindow()
 ###############################################################################
 # Example 1.
 ###############################################################################
+window.tracer(2)
 blue_turtle = rg.SimpleTurtle('turtle')
 blue_turtle.pen = rg.Pen('midnight blue', 3)
 blue_turtle.speed = 20  # Fast
