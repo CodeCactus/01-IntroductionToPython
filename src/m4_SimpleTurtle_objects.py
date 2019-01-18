@@ -82,7 +82,7 @@ rg=rosegraphics
 # (shorthand for rosegraphics) module.
 # -----------------------------------------------------------------------------
 window = rg.TurtleWindow()
-window.delay(2)  # Bigger numbers mean slower animation.
+window.delay(0.000001)  # Bigger numbers mean slower animation.
 
 # -----------------------------------------------------------------------------
 # The next few lines show how to:
@@ -117,7 +117,7 @@ natasha.go_to(rg.Point(-100, 200))
 
 ###############################################################################
 #
-# TODO: 4.
+# DONE: 4.
 #   Add a few more lines of your own code to make one of the existing
 #   SimpleTurtles move some more and/or have different characteristics.
 #
@@ -130,20 +130,20 @@ natasha.go_to(rg.Point(-100, 200))
 boris.pen=rg.Pen('green',2)
 boris.speed=1000
 boris.pen_up()
-for k in range(1000):
+for k in range(10):
     boris.backward(12)
     boris.right(3.141592654*((10^k)/(k+1)))
     boris.pen_down()
     boris.draw_circle(1+k/3.141592654)
     boris.pen_up()
-    boris.left(6)
+    boris.left(16)
     boris.pen_down()
     boris.draw_circle(((k**2)/(k+3.1415)))
     boris.pen_up()
     boris.right(6)
 ###############################################################################
 #
-# TODO: 5.
+# DONE: 5.
 #   The above code  CONSTRUCTS  two SimpleTurtle objects
 #   and gives those objects NAMES:
 #       boris    natasha
@@ -167,10 +167,26 @@ for k in range(1000):
 #   As always, test by running the module.
 #
 ###############################################################################
-
+import math as m
+rg.simpleturtle=rg.SimpleTurtle('turtle')
+st=rg.SimpleTurtle
+zelda=st('turtle')
+zelda.speed=10000000000
+for k in range(500):
+    zelda.pen=rg.Pen('purple',1)
+    zelda.draw_square(1+k/2)
+    zelda.left(10)
+    zelda.pen=rg.Pen('blue',2)
+    zelda.forward(10+k)
+    zelda.pen=rg.Pen('yellow',1)
+    zelda.draw_circle(2+(k/250))
+    zelda.pen = rg.Pen('blue',1)
+    zelda.backward(10+k)
+    zelda.right(10)
+    zelda.right(2+(24/(k+1)))
 ###############################################################################
 #
-# TODO: 6.
+# DONE: 6.
 #   Ensure that no blue bars on the scrollbar-thing to the right remain.
 #   Run one more time to be sure that all is still OK.
 #
