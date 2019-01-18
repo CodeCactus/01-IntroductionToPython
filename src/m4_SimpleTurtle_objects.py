@@ -10,11 +10,11 @@ Also:
   -- ASSIGNING a VALUE to a NAME (VARIABLE).
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
+         Aaron Wilkin, their colleagues, and Liam Groom.
 """
 ###############################################################################
 #
-# TODO: 1.
+# DONE: 1.
 #   Yes, that means for YOU to DO things per the following instructions:
 #
 #   On Line 13 above, replace  PUT_YOUR_NAME_HERE  with your OWN name.
@@ -25,11 +25,12 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #
 ###############################################################################
 
-import rosegraphics as rg
+import rosegraphics
+rg=rosegraphics
 
 ###############################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -48,7 +49,7 @@ import rosegraphics as rg
 
 ###############################################################################
 #
-# TODO: 3.
+# DONE: 3.
 #   Run this module.  A window will pop up and Turtles will move around.
 #   After the Turtles stop moving,
 #      ** click anywhere in the window to close the window **.
@@ -81,7 +82,7 @@ import rosegraphics as rg
 # (shorthand for rosegraphics) module.
 # -----------------------------------------------------------------------------
 window = rg.TurtleWindow()
-window.delay(20)  # Bigger numbers mean slower animation.
+window.delay(2)  # Bigger numbers mean slower animation.
 
 # -----------------------------------------------------------------------------
 # The next few lines show how to:
@@ -94,9 +95,9 @@ boris = rg.SimpleTurtle()
 #   - Ask the SimpleTurtle object to do things by applying METHODs to it.
 # The numbers in the parentheses are called ARGUMENTS.
 # -----------------------------------------------------------------------------
-boris.forward(100)
+boris.forward(30)
 boris.left(90)
-boris.forward(200)
+boris.forward(10)
 
 # -----------------------------------------------------------------------------
 # The next few lines show how to:
@@ -126,7 +127,20 @@ natasha.go_to(rg.Point(-100, 200))
 #   As always, test by running the module.
 #
 ###############################################################################
-
+boris.pen=rg.Pen('green',2)
+boris.speed=1000
+boris.pen_up()
+for k in range(1000):
+    boris.backward(12)
+    boris.right(3.141592654*((10^k)/(k+1)))
+    boris.pen_down()
+    boris.draw_circle(1+k/3.141592654)
+    boris.pen_up()
+    boris.left(6)
+    boris.pen_down()
+    boris.draw_circle(((k**2)/(k+3.1415)))
+    boris.pen_up()
+    boris.right(6)
 ###############################################################################
 #
 # TODO: 5.
