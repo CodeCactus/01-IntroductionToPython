@@ -38,6 +38,7 @@ dwas=rg.SimpleTurtle('triangle')
 window.tracer(2000)
 zelda=rg.SimpleTurtle('turtle')
 zelda.speed=10000000000
+
 for k in range(500):
     zelda.pen=rg.Pen('purple',1)
     zelda.draw_square(1+k/2)
